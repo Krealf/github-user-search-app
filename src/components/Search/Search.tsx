@@ -1,6 +1,5 @@
 import styles from "./Search.module.scss";
 import SearchIcon from "@/assets/icon-search.svg?react";
-import { useRef } from "react";
 import * as React from "react";
 import { Button } from "@/components/Button";
 
@@ -9,17 +8,20 @@ interface SearchProps {
   onSubmit: (text: string) => void;
 }
 
+type FormFields = {
+  username: HTMLInputElement;
+};
+
 export const Search = ({ hasError, onSubmit }: SearchProps) => {
-  const searchRef = useRef<HTMLInputElement | null>(null);
-
-  const handleSubmit = (event: React.SubmitEvent) => {
+  const handleSubmit = (
+    event: React.SubmitEvent<HTMLFormElement & FormFields>,
+  ) => {
     event.preventDefault();
-
-    const text = searchRef.current ? searchRef.current.value : "";
+    const text = event.currentTarget.username.value;
 
     if (text) {
       onSubmit(text);
-      if (searchRef.current) searchRef.current.value = "";
+      event.currentTarget.reset();
     }
   };
 
@@ -35,7 +37,6 @@ export const Search = ({ hasError, onSubmit }: SearchProps) => {
           type="text"
           className={styles.textField}
           placeholder="Search GitHub username..."
-          ref={searchRef}
         />
         {hasError && <div className={styles.error}>No results</div>}
         <Button>Search</Button>
