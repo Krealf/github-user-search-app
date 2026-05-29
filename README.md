@@ -5,12 +5,12 @@ This is a solution to the [GitHub user search app challenge on Frontend Mentor](
 ## Table of contents
 
 - [Overview](#overview)
-    - [The challenge](#the-challenge)
-    - [Screenshot](#screenshot)
-    - [Links](#links)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
 - [My process](#my-process)
-    - [Built with](#built-with)
-    - [What I learned](#what-i-learned)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
 - [Author](#author)
 
 ## Overview
@@ -27,8 +27,6 @@ Users should be able to:
 - **Bonus**: Have the correct color scheme chosen for them based on their computer preferences. _Hint_: Research `prefers-color-scheme` in CSS.
 
 ### Screenshot
-
-
 
 ### Links
 
@@ -52,15 +50,17 @@ To see how you can add code snippets, see below:
 ```html
 <h1>Some HTML code I'm proud of</h1>
 ```
+
 ```css
 .proud-of-this-css {
   color: papayawhip;
 }
 ```
+
 ```js
 const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+  console.log("🎉");
+};
 ```
 
 ## Author
